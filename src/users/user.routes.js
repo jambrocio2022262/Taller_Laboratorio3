@@ -2,10 +2,7 @@ import { Router } from "express";
 import { check } from "express-validator";
 import {
   usuariosGet,
-  usuariosPost,
-  getUsuarioById,
-  usuariosPut,
-  usuariosDelete,
+  usuariosPost
 } from "./user.controller.js";
 import {
   existenteEmail,
