@@ -17,16 +17,6 @@ const router = Router();
 
 router.get("/", usuariosGet);
 
-router.get(
-  "/:id",
-  [
-    check("id", "No es un ID válido").isMongoId(),
-    check("id").custom(existeUsuarioById),
-    validarCampos,
-  ],
-  getUsuarioById
-);
-
 router.post(
   "/",
   [
@@ -39,26 +29,6 @@ router.post(
     validarCampos,
   ],
   usuariosPost
-);
-
-router.put(
-  "/:id",
-  [
-    check("id", "No es un ID válido").isMongoId(),
-    check("id").custom(existeUsuarioById),
-    validarCampos,
-  ],
-  usuariosPut
-);
-
-router.delete(
-  "/:id",
-  [
-    check("id", "No es un ID válido").isMongoId(),
-    check("id").custom(existeUsuarioById),
-    validarCampos,
-  ],
-  usuariosDelete
 );
 
 export default router;
