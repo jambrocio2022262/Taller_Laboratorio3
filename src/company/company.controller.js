@@ -95,6 +95,31 @@ export const companyGetZA = async (req = request, res = response) =>{
    }
 };
 
+export const companyYears = async (req = request, res = response) =>{
+    const {limite, desde} = req.query;
+    const query = {estado: true};
+
+    try{
+        const [total, companyes] = await Promise.all([
+            Company.countDocuments(query),
+            Company.find(query)
+            .sort({ añosTrayectoria: -1})
+            .skip(Number(desde))
+            .limit(Number(limite))
+        ]);
+
+        res.status(200).json({
+            total,
+            companyes
+        })
+    }catch(error){
+        console.log(error);
+        res.status(500).json({
+            msg: "Error to list Companys"
+        })
+    }
+}
+
 export const exportExcelCompany = async (req, res) =>{
     try{
         let book = new excelJS.Workbook();

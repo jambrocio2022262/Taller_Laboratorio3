@@ -7,7 +7,8 @@ import{
     companyGetZA,
     companyPost,
     companyPut,
-    exportExcelCompany
+    exportExcelCompany,
+    companyYears
 } from "./company.controller.js";
 
 import{
@@ -48,6 +49,8 @@ router.get("/companyss", companyGetZA);
 
 
 router.get("/exportExcel",exportExcelCompany);
+
+router.get("/companysT", companyYears);
 
 
 export default router;
