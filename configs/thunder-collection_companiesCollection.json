@@ -1,0 +1,149 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "companiesCollection",
+    "dateExported": "2024-03-03T04:49:17.168Z",
+    "version": "1.1",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "cb7e9d7d-1e96-466f-b325-35c68b84f973",
+            "colId": "e6ae79fe-0bf2-468f-ac71-98c426075dc8",
+            "containerId": "",
+            "name": "company get",
+            "url": "http://localhost:8080/company_manager/v1/company",
+            "method": "GET",
+            "sortNum": 10000,
+            "created": "2024-03-03T00:50:46.912Z",
+            "modified": "2024-03-03T00:53:23.170Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "c507bd95-6b73-442a-aecb-864493e4aec8",
+            "colId": "e6ae79fe-0bf2-468f-ac71-98c426075dc8",
+            "containerId": "",
+            "name": "company post",
+            "url": "http://localhost:8080/company_manager/v1/company",
+            "method": "POST",
+            "sortNum": 20000,
+            "created": "2024-03-03T00:51:00.859Z",
+            "modified": "2024-03-03T01:56:18.505Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"nombre\": \"San José de los Infantes\",\n  \"telefono\":\"1285-9810\",\n  \"nivelInpacto\":\"Alto\",\n  \"añosTrayectoria\": \"100 años\",\n  \"categoria\": \"Educación\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "eb9bdf72-0b01-4056-b712-d80230e1789f",
+            "colId": "e6ae79fe-0bf2-468f-ac71-98c426075dc8",
+            "containerId": "",
+            "name": "company put",
+            "url": "http://localhost:8080/company_manager/v1/company/65e3ca4fd5e7d3180da0dff7",
+            "method": "PUT",
+            "sortNum": 30000,
+            "created": "2024-03-03T00:53:58.261Z",
+            "modified": "2024-03-03T00:56:06.100Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"nombre\": \"ANIMALES FC\",\n  \"telefono\":\"8745925\",\n  \"nivelInpacto\":\"Medio\",\n  \"añosTrayectoria\": \"2\",\n  \"categoria\": \"Silvestre\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "dd2f8f8d-c07b-4fd4-a3bf-462180dd3775",
+            "colId": "e6ae79fe-0bf2-468f-ac71-98c426075dc8",
+            "containerId": "",
+            "name": "companyGet AZ",
+            "url": "http://localhost:8080/company_manager/v1/company/companys?filtro=A-Z",
+            "method": "GET",
+            "sortNum": 40000,
+            "created": "2024-03-03T00:56:47.086Z",
+            "modified": "2024-03-03T00:57:21.638Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "filtro",
+                    "value": "A-Z",
+                    "isPath": false
+                }
+            ],
+            "tests": []
+        },
+        {
+            "_id": "cb013dbb-b69a-4ee7-b2e4-a9e55a28176d",
+            "colId": "e6ae79fe-0bf2-468f-ac71-98c426075dc8",
+            "containerId": "",
+            "name": "companyGet ZA ",
+            "url": "http://localhost:8080/company_manager/v1/company/companyss?filtro=Z-A",
+            "method": "GET",
+            "sortNum": 50000,
+            "created": "2024-03-03T00:57:42.247Z",
+            "modified": "2024-03-03T01:01:46.071Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "filtro",
+                    "value": "Z-A",
+                    "isPath": false
+                }
+            ],
+            "tests": []
+        },
+        {
+            "_id": "4a5d2f42-4721-499e-a87b-670d99f43892",
+            "colId": "e6ae79fe-0bf2-468f-ac71-98c426075dc8",
+            "containerId": "",
+            "name": "excel get",
+            "url": "http://localhost:8080/company_manager/v1/company/exportExcel",
+            "method": "GET",
+            "sortNum": 60000,
+            "created": "2024-03-03T01:34:07.837Z",
+            "modified": "2024-03-03T01:38:40.356Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "4d3634fc-e4a9-4ecb-8fad-33ae9f5f88b9",
+            "colId": "e6ae79fe-0bf2-468f-ac71-98c426075dc8",
+            "containerId": "",
+            "name": "trayectoria get",
+            "url": "http://localhost:8080/company_manager/v1/company/companysT",
+            "method": "GET",
+            "sortNum": 70000,
+            "created": "2024-03-03T04:24:39.452Z",
+            "modified": "2024-03-03T04:25:24.519Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "af2b49c8-6bd0-4e3b-99c4-e096d014f1be",
+            "colId": "e6ae79fe-0bf2-468f-ac71-98c426075dc8",
+            "containerId": "",
+            "name": "companyCategoria get",
+            "url": "http://localhost:8080/company_manager/v1/company/companysC?categoria=Electricidad",
+            "method": "GET",
+            "sortNum": 80000,
+            "created": "2024-03-03T04:41:20.302Z",
+            "modified": "2024-03-03T04:48:33.709Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "categoria",
+                    "value": "Electricidad",
+                    "isPath": false
+                }
+            ],
+            "tests": []
+        }
+    ]
+}

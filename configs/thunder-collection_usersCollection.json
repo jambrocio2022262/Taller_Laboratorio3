@@ -1,0 +1,53 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "usersCollection",
+    "dateExported": "2024-03-03T04:48:56.896Z",
+    "version": "1.1",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "6a8c4c99-9c63-4280-9493-cdd54530945b",
+            "colId": "31dacd58-80bd-4657-83ab-c53dd6ef4131",
+            "containerId": "",
+            "name": "user post",
+            "url": "http://localhost:8080/company_manager/v1/users",
+            "method": "POST",
+            "sortNum": 10000,
+            "created": "2024-03-03T00:46:55.651Z",
+            "modified": "2024-03-03T00:49:05.412Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"nombre\": \"Josue Ambrocio\",\n  \"correo\": \"jambrocio-2022262@kinal.edu.gt\",\n  \"password\": \"123456\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "242fa308-9b54-449a-9880-afafc932cfaf",
+            "colId": "31dacd58-80bd-4657-83ab-c53dd6ef4131",
+            "containerId": "",
+            "name": "user get",
+            "url": "http://localhost:8080/company_manager/v1/users?desde=0&limite=20",
+            "method": "GET",
+            "sortNum": 20000,
+            "created": "2024-03-03T00:48:38.047Z",
+            "modified": "2024-03-03T00:49:10.030Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "desde",
+                    "value": "0",
+                    "isPath": false
+                },
+                {
+                    "name": "limite",
+                    "value": "20",
+                    "isPath": false
+                }
+            ],
+            "tests": []
+        }
+    ]
+}

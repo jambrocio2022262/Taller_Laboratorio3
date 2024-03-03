@@ -120,6 +120,35 @@ export const companyYears = async (req = request, res = response) =>{
     }
 }
 
+export const companyCategory = async (req = request, res = response) => {
+    const { limite, desde, categoria } = req.query; 
+    const query = { estado: true };
+
+    if (categoria) {
+        query.categoria = categoria;
+    }
+
+    try {
+        const [total, companies] = await Promise.all([
+            Company.countDocuments(query),
+            Company.find(query)
+                .sort({ nombre: -1 }) 
+                .skip(Number(desde))
+                .limit(Number(limite))
+        ]);
+
+        res.status(200).json({
+            total,
+            companies
+        });
+    } catch (error) {
+        console.log(error);
+        res.status(500).json({
+            msg: 'Error al listar las empresas'
+        });
+    }
+};
+
 export const exportExcelCompany = async (req, res) =>{
     try{
         let book = new excelJS.Workbook();
