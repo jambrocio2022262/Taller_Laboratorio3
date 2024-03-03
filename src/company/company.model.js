@@ -14,7 +14,7 @@ const CompanySchema = mongoose.Schema({
         require: [true, 'The companys impact level is mandatory']
     },
     añosTrayectoria: {
-        type: Number,
+        type: String,
         require: [true, 'The years of experience of the company is mandatory']
     },
     categoria:{

@@ -1,5 +1,6 @@
 import { response, request } from "express";
 import Company from './company.model.js';
+import excelJS from 'exceljs';
 
 export const companyGet = async (req = request, res = response) =>{
     const {limite, desde} = req.query;
@@ -93,3 +94,35 @@ export const companyGetZA = async (req = request, res = response) =>{
     });
    }
 };
+
+export const exportExcelCompany = async (req, res) =>{
+    try{
+        let book = new excelJS.Workbook();
+
+        const sheet = book.addWorksheet("books");
+        sheet.columns = [
+            {header: "Unique Code", key:"_id", width: 25},
+            {header: "Name", key:"nombre", width: 25},
+            {header: "Phone", key:"telefono", width: 25},
+            {header: "Impact Level", key:"nivelInpacto", width: 25},
+            {header: "Years of trajectory", key:"añosTrayectoria", width: 25},
+            {header: "Category", key:"categoria", width: 25}
+        ]
+        const companys = await Company.find({});
+
+        companys.forEach(company =>{
+            sheet.addRow(company.toObject());
+        })
+        
+        const buffer = await book.xlsx.writeBuffer();
+
+        res.setHeader("Content-Type", "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet");
+        res.setHeader("Content-Disposition", "attatchment: filename=excelCompany.xlsx");
+        res.status(200).send(buffer);
+    }catch(error){
+        console.log(error),
+        res.status(400).json({
+            msg: "Error downloading excel"
+        })
+    }
+}

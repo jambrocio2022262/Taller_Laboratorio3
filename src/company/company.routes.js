@@ -6,7 +6,8 @@ import{
     companyGetAZ,
     companyGetZA,
     companyPost,
-    companyPut
+    companyPut,
+    exportExcelCompany
 } from "./company.controller.js";
 
 import{
@@ -44,6 +45,9 @@ router.put(
 router.get("/companys", companyGetAZ);
 
 router.get("/companyss", companyGetZA);
+
+
+router.get("/exportExcel",exportExcelCompany);
 
 
 export default router;
